@@ -18,7 +18,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Install Google Cloud SDK
+          name: Install Google Cloud SDK and kubectl
           command: |
             sudo apt-get update
             sudo apt-get install -y apt-transport-https ca-certificates gnupg curl lsb-release
@@ -26,8 +26,7 @@ jobs:
               sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
             curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | \
               sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
-            sudo apt-get update && sudo apt-get install -y google-cloud-sdk
-            which gcloud || echo "gcloud not found after install"
+            sudo apt-get update && sudo apt-get install -y google-cloud-sdk kubectl
 
       - run:
           name: Authenticate with Google Cloud
@@ -48,7 +47,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Install Google Cloud SDK
+          name: Install Google Cloud SDK and kubectl
           command: |
             sudo apt-get update
             sudo apt-get install -y apt-transport-https ca-certificates gnupg curl lsb-release
@@ -56,8 +55,7 @@ jobs:
               sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
             curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | \
               sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
-            sudo apt-get update && sudo apt-get install -y google-cloud-sdk
-            which gcloud || echo "gcloud not found after install"
+            sudo apt-get update && sudo apt-get install -y google-cloud-sdk kubectl
 
       - run:
           name: Authenticate with Google Cloud
