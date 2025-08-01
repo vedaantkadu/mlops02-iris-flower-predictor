@@ -3,7 +3,7 @@ version: 2.1
 executors:
   docker-executor:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/python:3.10  # ✅ Updated to include sudo
     working_directory: ~/repo
 
 jobs:
